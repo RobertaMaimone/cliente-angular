@@ -1,3 +1,4 @@
+import { ServicoPrestadoService } from './servico-prestado.service';
 import { ClientesModule } from './clientes/clientes.module';
 import { TemplateModule } from './template/template.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +9,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ClientesService } from './clientes.service'
 import { HttpClientModule } from '@angular/common/http'
+import { ServicosPrestadosModule } from './servicos-prestados/servicos-prestados.module'
+
 
 
 @NgModule({
@@ -20,10 +23,12 @@ import { HttpClientModule } from '@angular/common/http'
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    ClientesModule
+    ClientesModule,
+    ServicosPrestadosModule
   ],
   providers: [
-    ClientesService
+    ClientesService,
+    ServicoPrestadoService
   ],
   bootstrap: [AppComponent]
 })
