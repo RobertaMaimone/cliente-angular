@@ -10,7 +10,7 @@
           Serviço prestado salvo com sucesso!
         </div>
         <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
-          {{errors}}
+          {{ erro }}
         </div>
       </div>
     </div>
@@ -58,6 +58,11 @@
         <button type="submit" class="btn btn-success">
           <i class="fa fa-save"></i>
           Salvar
+        </button>
+
+        <button type="button" routerLink="/servicos-prestados/lista" class="btn btn-danger ml-4">
+          <i class="fa fa-arrow-alt-circle-left"></i>
+          Voltar
         </button>
       </div>
     </div>

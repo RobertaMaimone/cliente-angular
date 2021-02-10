@@ -1,12 +1,17 @@
+import { LayoutComponent } from './../layout/layout.component';
 import { ClientesListaComponent } from './clientes-lista/clientes-lista.component';
 import { ClientesFormsComponent } from './clientes-forms/clientes-forms.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'clientes-form' , component: ClientesFormsComponent},
-  { path: 'clientes-form/:id' , component: ClientesFormsComponent},
-  { path: 'clientes-lista' , component: ClientesListaComponent}
+  { path: 'clientes' , component: LayoutComponent, children: [
+    { path: 'form' , component: ClientesFormsComponent},
+    { path: 'form/:id' , component: ClientesFormsComponent},
+    { path: 'lista' , component: ClientesListaComponent},
+    { path: '', redirectTo: '/clientes/lista', pathMatch: 'full' }
+  ]}
+
 ];
 
 @NgModule({
